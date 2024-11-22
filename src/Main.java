@@ -49,6 +49,12 @@ public class Main {
         QuestionType singlePickQType = new QuestionType("Question with single answer", singlePickQuestions);
         QuestionType multiPickQType =new QuestionType("Question with multiple answers", multiPickQuestions);
 
-        System.out.println("You had " + Quiz.play() + Question.qCount + " answers correct");
+        ArrayList<QuestionType> questionTypes = new ArrayList<>();
+        questionTypes.add(singlePickQType);
+        questionTypes.add(multiPickQType);
+
+        Quiz quiz1 = new Quiz(questionTypes, 0);
+
+        System.out.println("You had " + quiz1.play() + "/" + Question.qCount + " answers correct");
     }
 }
